@@ -22,41 +22,39 @@ Testing the commands for the desired output.
 
 # COMMANDS:
 ### Create the following files file1, file2 as follows:
-cat > file1
 ```
+cat > file1
 chanchal singhvi
 c.k. shukla
 s.n. dasgupta
 sumit chakrobarty
-^d
+```
 ```
 cat > file2
-```
 anil aggarwal
 barun sengupta
 c.k. shukla
 lalit chowdury
 s.n. dasgupta
-^d
 ```
 ### Display the content of the files
-cat < file1
+```cat < file1```
 ## OUTPUT
+![com1](<outputs/Screenshot from 2024-08-22 08-15-13.png>)
 
-
-
-cat < file2
+```cat < file2```
 ## OUTPUT
-
+![com2](<outputs/Screenshot from 2024-08-22 08-16-35.png>)
 
 # Comparing Files
-cmp file1 file2
+```cmp file1 file2```
 ## OUTPUT
- 
-comm file1 file2
- ## OUTPUT
+![com3](<outputs/Screenshot from 2024-08-22 08-18-16.png>)
 
- 
+```comm file1 file2```
+ ## OUTPUT
+![com4](<outputs/Screenshot from 2024-08-22 08-21-30.png>)
+
 diff file1 file2
 ## OUTPUT
 

@@ -55,169 +55,187 @@ s.n. dasgupta
  ## OUTPUT
 ![com4](<outputs/Screenshot from 2024-08-22 08-21-30.png>)
 
-diff file1 file2
+```diff file1 file2```
 ## OUTPUT
-
+![com5](<outputs/Screenshot from 2024-08-29 09-27-07.png>)
 
 #Filters
 
 ### Create the following files file11, file22 as follows:
-
-cat > file11
 ```
+cat > file11
 Hello world
 This is my world
-^d
+```
 ```
 cat > file22
-```
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
-^d
 ```
-
-
+```
 cut -c1-3 file11
-## OUTPUT
-
-
-
-
-cut -d "|" -f 1 file22
-## OUTPUT
-
-
-
-cut -d "|" -f 2 file22
-## OUTPUT
-
-
-cat < newfile 
 ```
+## OUTPUT
+
+![com6]](<outputs/Screenshot from 2024-08-29 09-35-38.png>)
+
+
+```
+cut -d "|" -f 1 file22
+```
+## OUTPUT
+
+![com7](<outputs/Screenshot from 2024-08-29 09-36-57.png>)
+
+```
+cut -d "|" -f 2 file22
+```
+## OUTPUT
+![com8](<outputs/Screenshot from 2024-08-29 09-39-02.png>)
+```
+cat < newfile 
 Hello world
 hello world
-^d
-````
+```
+```
 cat > newfile 
 Hello world
 hello world
- 
+```
+```
 grep Hello newfile 
+```
 ## OUTPUT
+![com9](<outputs/Screenshot from 2024-08-29 09-44-51.png>)
 
-
-
+```
 grep hello newfile 
+```
 ## OUTPUT
+![com10](<outputs/Screenshot from 2024-08-29 09-47-47.png>)
 
-
-
-
+```
 grep -v hello newfile 
+```
 ## OUTPUT
+![com11](<outputs/Screenshot from 2024-09-01 12-39-14.png>)
 
-
-
+```
 cat newfile | grep -i "hello"
+```
 ## OUTPUT
 
+![com12](<outputs/Screenshot from 2024-09-01 12-40-44.png>)
 
-
-
+```
 cat newfile | grep -i -c "hello"
+```
 ## OUTPUT
 
+![com13](<outputs/Screenshot from 2024-09-01 12-42-30.png>)
 
-
-
+```
 grep -R ubuntu /etc
+```
 ## OUTPUT
 
 
-
-grep -w -n world newfile   
+```
+grep -w -n world newfile  
+```
 ## OUTPUT
+![com14](<outputs/Screenshot from 2024-09-01 12-49-29.png>)
 
-
+```
 cat < newfile 
-```
 Hello world
 hello world
 Linux is world number 1
 Unix is predecessor
 Linux is best in this World
-^d
 ```
-
+```
 cat > newfile
-```
 Hello world
 hello world
 Linux is world number 1
 Unix is predecessor
 Linux is best in this World
-^d
- ```
-egrep -w 'Hello|hello' newfile 
-## OUTPUT
-
-
-
-egrep -w '(H|h)ello' newfile 
-## OUTPUT
-
-
-
-egrep -w '(H|h)ell[a-z]' newfile 
-## OUTPUT
-
-
-
-
-egrep '(^hello)' newfile 
-## OUTPUT
-
-
-
-egrep '(world$)' newfile 
-## OUTPUT
-
-
-
-egrep '(World$)' newfile 
-## OUTPUT
-
-
-egrep '((W|w)orld$)' newfile 
-## OUTPUT
-
-
-
-egrep '[1-9]' newfile 
-## OUTPUT
-
-
-
-egrep 'Linux.*world' newfile 
-## OUTPUT
-
-
-egrep 'Linux.*World' newfile 
-## OUTPUT
-
-
-egrep l{2} newfile
-## OUTPUT
-
-
-
-egrep 's{1,2}' newfile
-## OUTPUT 
-
-
-cat > file23
 ```
+
+```
+egrep -w 'Hello|hello' newfile 
+```
+## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 12-54-12.png>)
+
+```
+egrep -w '(H|h)ello' newfile 
+```
+## OUTPUT
+
+![com](<outputs/Screenshot from 2024-09-01 12-55-37.png>)
+
+```
+egrep -w '(H|h)ell[a-z]' newfile 
+```
+## OUTPUT
+
+![com](<outputs/Screenshot from 2024-09-01 12-56-19.png>)
+
+```
+egrep '(^hello)' newfile 
+```
+## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 12-57-50.png>)
+
+
+```
+egrep '(world$)' newfile 
+```
+## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 12-58-38.png>)
+
+
+```
+egrep '(World$)' newfile 
+```
+## OUTPUT
+
+![com](<outputs/Screenshot from 2024-09-01 12-59-32.png>)
+```
+egrep '((W|w)orld$)' newfile 
+```
+## OUTPUT
+
+![com](<outputs/Screenshot from 2024-09-01 13-00-19.png>)
+```
+egrep '[1-9]' newfile 
+```
+## OUTPUT
+
+![com](<outputs/Screenshot from 2024-09-01 13-01-50.png>)
+
+```
+egrep 'Linux.*world' newfile 
+```
+## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-02-53.png>)
+```
+egrep l{2} newfile
+```
+## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-03-50.png>)
+
+```
+egrep 's{1,2}' newfile
+```
+## OUTPUT 
+![com](<outputs/Screenshot from 2024-09-01 13-04-43.png>)
+
+```
+cat > file23
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
@@ -226,102 +244,124 @@ cat > file23
 1004 | Sit |  7000 | Dev
 1003 | Joe |  7000 | Developer
 1001 | Ram | 10000 | HR
-^d
 ```
 
-
+```
 sed -n -e '3p' file23
+```
 ## OUTPUT
-
-
-
+![com](<outputs/Screenshot from 2024-09-01 13-06-31.png>)
+```
 sed -n -e '$p' file23
+```
 ## OUTPUT
 
-
-
+![com](<outputs/Screenshot from 2024-09-01 13-07-52.png>)
+```
 sed  -e 's/Ram/Sita/' file23
+```
 ## OUTPUT
 
-
-
+![com](<outputs/Screenshot from 2024-09-01 13-08-35.png>)
+```
 sed  -e '2s/Ram/Sita/' file23
+```
+
 ## OUTPUT
 
-
-
+![com](<outputs/Screenshot from 2024-09-01 13-09-22.png>)
+```
 sed  '/tom/s/5000/6000/' file23
+```
 ## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-10-39.png>)
 
-
-
+```
 sed -n -e '1,5p' file23
+```
 ## OUTPUT
+![com](<Screenshot from 2024-09-01 13-12-29.png>)
 
-
-
+```
 sed -n -e '2,/Joe/p' file23
+```
 ## OUTPUT
-
-
-
-
+![com](<outputs/Screenshot from 2024-09-01 13-15-55.png>)
+```
 sed -n -e '/tom/,/Joe/p' file23
+```
 ## OUTPUT
-
-
-
+![com](<outputs/Screenshot from 2024-09-01 13-16-56.png>)
+```
 seq 10 
+```
 ## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-45-10.png>)
 
 
-
+```
 seq 10 | sed -n '4,6p'
+```
 ## OUTPUT
 
+![com](<outputs/Screenshot from 2024-09-01 13-46-36.png>)
 
-
+```
 seq 10 | sed -n '2,~4p'
+```
 ## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-47-26.png>)
 
-
-
+```
 seq 3 | sed '2a hello'
+```
 ## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-48-05.png>)
 
-
-
+```
 seq 2 | sed '2i hello'
+```
 ## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-50-23.png>)
 
-
+```
 seq 10 | sed '2,9c hello'
+```
 ## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-51-22.png>)
 
-
+```
 sed -n '2,4{s/^/$/;p}' file23
+```
 ## OUTPUT
 
+![com](<outputs/Screenshot from 2024-09-01 13-52-45.png>)
 
-
+```
 sed -n '2,4{s/$/*/;p}' file23
-
+```
+## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-55-04.png>)
 
 #Sorting File content
+
+```
 cat > file21
-```
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
 1005 | Sam |  5000 | HR
 1004 | Sit |  7000 | Dev
 ``` 
+```
 sort file21
-## OUTPUT
-
-
-cat > file22
 ```
+## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-57-16.png>)
+
+
+```
+cat > file22
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
@@ -329,58 +369,69 @@ cat > file22
 1005 | Sam |  5000 | HR
 1004 | Sit |  7000 | Dev
 ``` 
+```
 uniq file22
+```
 ## OUTPUT
-
-
+![com](<outputs/Screenshot from 2024-09-01 13-58-09.png>)
 
 #Using tr command
-
+```
 cat file23 | tr [:lower:] [:upper:]
- ## OUTPUT
-
-cat < urllist.txt
 ```
-www. yahoo. com
-www. google. com
-www. mrcet.... com
-^d
- ```
-cat > urllist.txt
-```
-www. yahoo. com
-www. google. com
-www. mrcet.... com
- ```
-cat urllist.txt | tr -d ' '
- ## OUTPUT
-
-
- 
-cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 13-59-24.png>)
 
 
+```
+cat < urllist.txt
+www. yahoo. com
+www. google. com
+www. mrcet.... com
+```
+
+```
+cat > urllist.txt
+www. yahoo. com
+www. google. com
+www. mrcet.... com
+```
+```
+cat urllist.txt | tr -d ' '
+```
+ ## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 14-02-09.png>)
+
+```
+cat urllist.txt | tr -d ' ' | tr -s '.'
+```
+## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 14-03-13.png>)
 
 #Backup commands
+```
 tar -cvf backup.tar *
+```
 ## OUTPUT
+![com](<outputs/Screenshot from 2024-09-01 14-05-17.png>)
 
-
+```
 mkdir backupdir
- 
-mv backup.tar backupdir
- 
+mv backup.tar backupdir 
 tar -tvf backup.tar
+```
 ## OUTPUT
 
-
+```
 tar -xvf backup.tar
+```
 ## OUTPUT
 
+```
 gzip backup.tar
-
 ls .gz
+```
+
 ## OUTPUT
  
 gunzip backup.tar.gz

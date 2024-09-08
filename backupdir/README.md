@@ -137,12 +137,8 @@ cat newfile | grep -i -c "hello"
 grep -R ubuntu /etc
 ```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-04 09-27-56.png>)
-![com](<outputs/Screenshot from 2024-09-04 09-28-13.png>)
-![com](<outputs/Screenshot from 2024-09-04 09-28-17.png>)
-![com](<outputs/Screenshot from 2024-09-04 09-28-20.png>)
-![com](<outputs/Screenshot from 2024-09-04 09-28-23.png>)
-![com](<outputs/Screenshot from 2024-09-04 09-28-26.png>)
+
+
 ```
 grep -w -n world newfile  
 ```
@@ -378,7 +374,7 @@ uniq file22
 ## OUTPUT
 ![com](<outputs/Screenshot from 2024-09-01 13-58-09.png>)
 
-# Using tr command
+#Using tr command
 ```
 cat file23 | tr [:lower:] [:upper:]
 ```
@@ -417,63 +413,53 @@ tar -cvf backup.tar *
 ```
 ## OUTPUT
 ![com](<outputs/Screenshot from 2024-09-01 14-05-17.png>)
-![com](<outputs/Screenshot from 2024-09-03 08-24-16.png>)
+
 ```
 mkdir backupdir
 mv backup.tar backupdir 
 tar -tvf backup.tar
 ```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-03 08-33-16.png>)
 
 ```
 tar -xvf backup.tar
 ```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-03 08-35-02.png>)
 
 ```
 gzip backup.tar
-ls *.gz
+ls .gz
 ```
 
 ## OUTPUT
- ![com](<outputs/Screenshot from 2024-09-04 09-36-07.png>)
-
-```
+ 
 gunzip backup.tar.gz
-ls *.tar
-```
-## OUTPUT 
-![com](<Screenshot from 2024-09-04 09-44-03.png>)
+## OUTPUT
+
  
 # Shell Script
 ```
 echo '#!/bin/sh' > my-script.sh
 echo 'echo Hello World‘; exit 0 >> my-script.sh
 ```
-```
 chmod 755 my-script.sh
 ./my-script.sh
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 15-53-15.png>)
-```
+
+ 
 cat << stop > herecheck.txt
-```
 ```
 hello in this world
 i cant stop
 for this non stop movement
 stop
-cat herecheck.txt
 ```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-04 17-58-20.png>)
 
-```
+cat herecheck.txt
+## OUTPUT
+
+
 cat < scriptest.sh 
-```
 ```bash
 \#!/bin/sh
 echo “File name is $0 ”
@@ -486,11 +472,10 @@ echo 'The $@ is ' $@
 echo 'The $\# is ' $1#
 echo 'The $$ is ' $$
 ps
-```
-![com](<outputs/Screenshot from 2024-09-04 18-51-59.png>)
-```
+^d
+ ```
+
 cat scriptest.sh 
-```
 ```bash
 \#!/bin/sh
 echo “File name is $0 ”
@@ -504,41 +489,35 @@ echo 'The $\# is ' $\#
 echo 'The $$ is ' $$
 ps
 ```
-```
-chmod 777 scriptest.sh
-./scriptest.sh 1 2 3
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-04 18-52-16.png>)
  
-```
-ls file1
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-04 18-55-15.png>)
-```
-echo $?
-```
-## OUTPUT 
-![com](<outputs/Screenshot from 2024-09-04 18-56-02.png>)
-```
-./one bash: ./one: Permission denied
-echo $?
-```
-## OUTPUT 
-![com](<outputs/Screenshot from 2024-09-08 15-58-11.png>)
-```
-abcd
-echo $?
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 16-00-44.png>)
+chmod 777 scriptest.sh
+ 
+./scriptest.sh 1 2 3
 
+## OUTPUT
+
+ 
+ls file1
+## OUTPUT
+
+echo $?
+## OUTPUT 
+./one
+bash: ./one: Permission denied
+ 
+echo $?
+## OUTPUT 
+ 
+abcd
+ 
+echo $?
+ ## OUTPUT
+
+
+ 
 # mis-using string comparisons
 
-```
-cat > strcomp.sh 
-```
+cat < strcomp.sh 
 ```bash
 \#!/bin/bash
 val1=baseball
@@ -551,9 +530,8 @@ echo "$val1 is less than $val2"
 fi
 ^d
 ```
-```
+
 cat strcomp.sh 
-```
 ```bash
 \#!/bin/bash
 val1=baseball
@@ -565,21 +543,18 @@ else
 echo "$val1 is less than $val2"
 fi
 ```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-04 19-02-56.png>)
+##OUTPUT
 
 
-```
+
 chmod 755 strcomp.sh
+ 
 ./strcomp.sh 
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-04 19-04-46.png>)
+
 
 # check file ownership
-```
-cat > psswdperm.sh 
-```
+cat < psswdperm.sh 
 ```bash
 \#!/bin/bash
 if [ -O /etc/passwd ]
@@ -588,10 +563,10 @@ echo “You are the owner of the /etc/passwd file”
 else
 echo “Sorry, you are not the owner of the /etc/passwd file”
 fi
+^d
 ```
-```
+
 cat psswdperm.sh 
-```
 ```bash
 /#!/bin/bash
 if [ -O /etc/passwd ]
@@ -600,18 +575,12 @@ echo “You are the owner of the /etc/passwd file”
 else
 echo “Sorry, you are not the owner of the /etc/passwd file”
 fi
-```
-```
+ ```
 ./psswdperm.sh
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 13-15-52.png>)
 
 # check if with file location
-
-```
 cat>ifnested.sh 
-```
 ```bash
 \#!/bin/bash
 if [ -e $HOME ]
@@ -630,10 +599,9 @@ fi
 else
 echo “Sorry, the object does not exist”
 fi
-```
+^d
 ```
 cat ifnested.sh 
-```
 ```
 \#!/bin/bash
 if [ -e $HOME ]
@@ -653,16 +621,14 @@ else
 echo “Sorry, the object does not exist”
 fi
 ```
-```
+
 ./ifnested.sh 
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 13-18-58.png>)
+
+
 
 # using numeric test comparisons
-```
 cat > iftest.sh 
-```
 ```bash
 \#!/bin/bash
 val1=10
@@ -677,10 +643,11 @@ echo “The values are equal”
 else
 echo “The values are different”
 fi
+^d
 ```
-```
+
+
 cat iftest.sh 
-```
 ```bash
 \#!/bin/bash
 val1=10
@@ -696,17 +663,14 @@ else
 echo “The values are different”
 fi
 ```
-```
+
 $ chmod 755 iftest.sh
+ 
 $ ./iftest.sh 
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 13-20-49.png>)
+##OUTPUT
 
 # check if a file
-```
-cat > ifnested.sh
-``` 
+cat > ifnested.sh 
 ```bash
 \#!/bin/bash
 if [ -e $HOME ]
@@ -725,10 +689,10 @@ fi
 else
 echo “Sorry, the object does not exist”
 fi
+^d
 ```
-```
+
 cat ifnested.sh 
-```
 ```bash
 \#!/bin/bash
 if [ -e $HOME ]
@@ -748,17 +712,14 @@ else
 echo “Sorry, the object does not exist”
 fi
 ```
-```
+
 $ chmod 755 ifnested.sh
+ 
 $ ./ifnested.sh 
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 13-22-30.png>)
+##OUTPUT
 
 # looking for a possible value using elif
-```
 cat elifcheck.sh 
-```
 ```bash
 \#!/bin/bash
 if [ $USER = Ram ]
@@ -779,17 +740,15 @@ else
 echo "Sorry, you are not allowed here"
 fi
 ```
-```
+
 $ chmod 755 elifcheck.sh
+ 
 $ ./elifcheck.sh 
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 13-25-24.png>)
+
 
 # testing compound comparisons
-```
 cat> ifcompound.sh 
-```
 ```bash
 \#!/bin/bash
 if [ -d $HOME ] && [ -w $HOME ]
@@ -799,17 +758,12 @@ else
 echo "I cannot write to the file"
 fi
 ```
-```
 $ chmod 755 ifcompound.sh
 $ ./ifcompound.sh 
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 13-27-10.png>)
 
 # using the case command
-```
 cat >casecheck.sh 
-```
 ```bash
 case $USER in
 Ram | Robert)
@@ -823,15 +777,11 @@ echo "$USER, Do not forget to log off when you're done";;
 echo "Sorry, you are not allowed here";;
 esac
 ```
-```
 $ chmod 755 casecheck.sh 
+ 
 $ ./casecheck.sh 
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-02-11.png>)
-```
+ 
 cat > whiletest
-```
 ```bash
 #!/bin/bash
 #while command test
@@ -842,15 +792,12 @@ echo $var1
 var1=$[ $var1 - 1 ]
 done
 ```
-```
 $ chmod 755 whiletest.sh
+ 
 $ ./whiletest.sh
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-05-46.png>)
-```
-cat > untiltest.sh 
-```
+ 
+ 
+cat untiltest.sh 
 ```bash
 \#using the until command
 var1=100
@@ -860,14 +807,11 @@ echo $var1
 var1=$[ $var1 - 25 ]
 done
 ``` 
-```
 $ chmod 755 untiltest.sh
-$ ./untiltest.sh
-```
-![com](<outputs/Screenshot from 2024-09-08 14-08-26.png>)
-```
-cat > forin1.sh 
-```
+ 
+ 
+ 
+cat forin1.sh 
 ```bash
 \#!/bin/bash
 \#basic for command
@@ -875,15 +819,24 @@ for test in Alabama Alaska Arizona Arkansas California Colorado
 do
 echo The next state is $test
 done
-```
-```
+ ```
+ 
 $ chmod 755 forin1.sh
-$ ./forin1.sh
-```
-![com](<outputs/Screenshot from 2024-09-08 14-11-19.png>)
-```
-cat > forin2.sh 
-```
+ 
+ 
+cat forin2.sh 
+```bash
+\#!/bin/bash
+\# another example of how not to use the for command
+for test in I don't know if this'll work
+do
+echo “word:$test”
+done
+ ```
+ 
+$ chmod 755 forin2.sh
+ 
+cat forin2.sh 
 ```bash
 \#!/bin/bash
 \# another example of how not to use the for command
@@ -892,15 +845,11 @@ do
 echo “word:$test”
 done
 ```
-```
 $ chmod 755 forin2.sh
+ 
 $ ./forin2.sh 
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-16-36.png>)
-```
-cat > forin3.sh 
-```
+ 
+cat forin3.sh 
 ```bash
 \#!/bin/bash
 \# another example of how not to use the for command
@@ -909,14 +858,9 @@ do
 echo "word:$test"
 done
 ```
-```
 $ ./forin3.sh 
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-18-14.png>)
-```
-cat > forin1.sh 
-```
+ 
+cat forin1.sh 
 ```bash
 #!/bin/bash
 # basic for command
@@ -925,25 +869,20 @@ do
 echo The next state is $test
 done
 ```
-```
 $ chmod 755 forin1.sh
-$ ./forin1.sh
-```
+
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-20-37.png>)
-```
-cat > forinfile.sh 
-```
+cat forinfile.sh 
 ```bash
 #!/bin/bash
 # reading values from a file
 file="cities"
 for state in `cat $file`
 do
-echo "Visit beautiful $file"
+echo "Visit beautiful $file“
 done
 ```
-```
+$ chmod 777 forinfile.sh
 $ cat cities
 Hyderabad
 Alampur
@@ -952,16 +891,11 @@ Warangal
 Adilabad
 Bhadrachalam
 Khammam
-```
-```
-$ chmod 777 forinfile.sh
-$ ./forinfile.sh
-```
+
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-29-12.png>)
-```
-cat > forctype.sh 
-```
+
+
+cat forctype.sh 
 ```bash
 #!/bin/bash
 # testing the C-style for loop
@@ -969,16 +903,12 @@ for (( i=1; i <= 5; i++ ))
 do
 echo "The value of i is $i"
 done
-```
-```
+````
 $ chmod 755 forctype.sh
 $ ./forctype.sh 
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-33-01.png>)
-```
-cat > forctype1.sh 
-```
+
+cat forctype1.sh 
 ```bash
 #!/bin/bash
 # multiple variables
@@ -987,15 +917,11 @@ do
 echo "$a - $b"
 done
 ```
-```
-$ chmod 755 forctype1.sh
+$ chmod 755 forctype.sh
 $ ./forctype1.sh 
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-42-01.png>)
-```
-cat > fornested1.sh 
-```
+
+cat fornested1.sh 
 ```bash
 #!/bin/bash
 # nesting for loops
@@ -1008,15 +934,13 @@ echo " Inside loop: $b"
 done
 done
 ```
-```
 $ chmod 755 fornested1.sh
+ 
 $ ./fornested1.sh 
-```
  ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-44-55.png>)
-```
-cat > forbreak.sh 
-```
+
+ 
+cat forbreak.sh 
 ```bash
 #!/bin/bash
 # breaking out of a for loop
@@ -1028,17 +952,15 @@ break
 fi
 echo "Iteration number: $var1"
 done
-echo "The for loop is completed"
-```
-```
-$ chmod 755 forbreak.sh
-$ ./forbreak.sh
+echo "The for loop is completed“
 ```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-53-05.png>)
-```
-cat > forcontinue.sh 
-```
+
+$ chmod 755 forbreak.sh
+ 
+$ ./forbreak.sh 
+ 
+cat forbreak.sh 
 ```bash
 #!/bin/bash
 # breaking out of a for loop
@@ -1050,49 +972,46 @@ continue
 fi
 echo "Iteration number: $var1"
 done
-echo "The for loop is completed"
+echo "The for loop is completed“
 ```
-```
+
+ 
 $ chmod 755 forcontinue.sh
+ 
 $ ./forcontinue.sh 
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 14-59-12.png>)
-```
-cat > exread.sh 
-```
+ 
+cat exread.sh 
 ```bash
 #!/bin/bash
 # testing the read command
 echo -n "Enter your name: "
 read name
 echo "Hello $name, welcome to my program. "
-```
-```
+ ```
+ 
 $ chmod 755 exread.sh 
+ 
 $ ./exread.sh 
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 15-04-30.png>)
-```
-cat > exread1.sh
-```
+
+
+ cat exread1.sh
 ```bash
 #!/bin/bash
 # testing the read command
 read -p "Enter your name: " name
-echo "Hello $name, welcome to my program. "
+echo "Hello $name, welcome to my program. “
 ``` 
-```
 $ chmod 755 exread1.sh 
-$ ./exread1.sh
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 15-08-28.png>)
 
-```
-cat > funcex.sh
-```
+## OUTPUT
+
+
+
+$ ./exread1.sh 
+ 
+cat funcex.sh
 ```bash
 #!/bin/bash
 # trying to access script parameters inside a function
@@ -1107,16 +1026,14 @@ else
 echo "Usage: badtest1 a b"
 fi
 ```
-```
-./funcex.sh 
-./funcex.sh 1 2
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 15-13-59.png>)
+ ./funcex.sh 
 
-``` 
-cat > argshift.sh
-```
+ 
+ ./funcex.sh 1 2
+
+ 
+cat argshift.sh
 ```bash
 #!/bin/bash 
  while (( "$#" )); do 
@@ -1124,16 +1041,12 @@ cat > argshift.sh
   shift 
 done
 ```
-```
 $ chmod 777 argshift.sh
-$ ./argshift.sh 1 2 3
-```
-## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 15-15-31.png>)
 
-```
-cat > argshift1.sh
-```
+## OUTPUT
+$ ./argshift.sh 1 2 3
+ 
+ cat argshift1.sh
 ```bash
  #/bin/bash 
  # store arguments in a special array 
@@ -1146,15 +1059,11 @@ for (( i=0;i<$ELEMENTS;i++)); do
     echo ${args[${i}]} 
 done
 ```
-```
-$ chmod 777 argshift1.sh
-$ ./argshift1.sh 1 2 3
-```
+$ chmod 777 argshift.sh
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 15-18-06.png>)
-```
-cat > argshift.sh
-```
+$ ./argshift.sh 1 2 3
+ 
+cat argshift.sh
 ```bash
 #!/bin/bash 
 set -x 
@@ -1164,15 +1073,11 @@ while (( "$#" )); do
 done
 set +x
 ```
-```
-chmod 777 argshift.sh
-./argshift.sh 1 2 3
-```
 ## OUTPUT
-![com](<outputs/Screenshot from 2024-09-08 15-22-33.png>)
-```
+ ./argshift.sh 1 2 3
+ 
+ 
 cat > nc.awk
-```
 ```bash
 BEGIN{}
 {
@@ -1185,10 +1090,8 @@ print "total characters",chrcnt
 print "Number of Lines are",NR
 print "No of Words count:",wordcount
 }
-```
-```
+ ```
 cat>data.dat
-```
 ```bash
 bcdfghj
 abcdfghj
@@ -1201,15 +1104,10 @@ obcdfghj
 bcdfghj
 ubcdfghj
 ```
-```
 awk -f nc.awk data.dat
-```
 ## OUTPUT 
-![com](<outputs/Screenshot from 2024-09-08 15-25-30.png>)
-
-```
+ 
 cat > palindrome.sh
-```
 ```bash
 #num=545
 echo "Enter the number"
@@ -1234,11 +1132,8 @@ else
 	echo "Number is NOT palindrome"
 fi
 ```
-```
-bash palindrome.sh
-```
 ## OUTPUT 
-![com](<outputs/Screenshot from 2024-09-08 15-28-57.png>)
+
 
 # RESULT:
 The Commands are executed successfully.

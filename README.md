@@ -282,7 +282,7 @@ sed  '/tom/s/5000/6000/' file23
 sed -n -e '1,5p' file23
 ```
 ## OUTPUT
-![com](<Screenshot from 2024-09-01 13-12-29.png>)
+![image](https://github.com/user-attachments/assets/222e7d4a-0ec4-41be-9bd6-2018fe840fa4)
 
 ```
 sed -n -e '2,/Joe/p' file23
